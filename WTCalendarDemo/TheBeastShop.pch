@@ -1,0 +1,73 @@
+//
+//  TheBeastShop.pch
+//  TheBeastStore
+//
+//  Created by 孙文强 on 15/11/17.
+//  Copyright © 2015年 Winton. All rights reserved.
+//
+
+
+#ifndef TheBeastShop_pch
+#define TheBeastShop_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+//#ifndef TheBeastStore_Prefix_h
+//#define TheBeastStore_Prefix_h
+
+#ifdef __OBJC__
+#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+#import "UIView+Extend.h"
+#import "UIColor+FlatUI.h"
+#import "UILabel+SuggestSize.h"
+#import <Masonry/Masonry.h>
+
+#define SCREEN_Width   [UIScreen mainScreen].bounds.size.width
+#define SCREEN_Height  [UIScreen mainScreen].bounds.size.height
+#define WT_Width   self.view.frame.size.width
+#define WT_Height  self.view.frame.size.height
+
+
+#pragma mark 系统常用变量---
+
+#define IS_IOS8 ([[[UIDevice currentDevice] systemVersion] floatValue] >= 8)
+
+// 1.判断是否为iOS7
+#define iOS7 ([[UIDevice currentDevice].systemVersion doubleValue] >= 7.0)
+
+
+// 2.获得RGB颜色
+#define RGB_Color(r, g, b) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:1.0]
+
+
+#define DLog(...) NSLog((@"%s [Line %d] %@"), __PRETTY_FUNCTION__, __LINE__, [NSString stringWithFormat:__VA_ARGS__])
+
+
+//font
+#pragma mark font
+#pragma mark 中文字体-华康黑体
+#define APPFont_DFPHeiW7(x) [UIFont fontWithName:@"DFPHeiW7" size:x]
+#define APPFont_DFPHeiW5(x) [UIFont fontWithName:@"DFPHeiW5" size:x]
+#define APPFont_DFPHeiW3(x) [UIFont fontWithName:@"DFPHeiW3" size:x]
+
+#pragma mark 英文字体
+#define APPFont_SabonLTStd_Italic(x) [UIFont fontWithName:@"SabonLTStd-Italic" size:x]
+#define APPFont_SabonLTStd_Roman(x) [UIFont fontWithName:@"SabonLTStd-Roman" size:x]
+#define APPFont_AkzidenzGroteskBQ_LigCnd(x)  [UIFont fontWithName:@"AkzidenzGroteskBQ-LigCnd" size:x]
+
+
+
+#pragma mark - 图片，返回UIImage
+
+#define ImageNamed(name) [UIImage imageNamed:name]
+
+#define  Label_Font(x)   [UIFont fontWithName:@"Helvetica Neue" size:x]
+
+
+
+#endif
+
+
+#endif /* TheBeastShop_pch */
